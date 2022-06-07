@@ -4,8 +4,7 @@ import ProductColor from "./ProductColor";
 import ProductSize from "./ProductSize";
 
 const ProductDetails = () => {
-  const product = useContext(ProductContext);
-  const { title } = product;
+  const { title } = useContext(ProductContext);
   return (
     <div>
       <h2 className="text-lg font-semibold">{title}</h2>
@@ -19,8 +18,8 @@ const ProductDetails = () => {
           </span>
         </div>
       </div>
-      <ProductColor colors={product?.variation?.props[0]} />
-      <ProductSize sizes={product?.variation?.props[1]} />
+      <ProductColor />
+      <ProductSize />
     </div>
   );
 };

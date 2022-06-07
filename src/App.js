@@ -7,6 +7,8 @@ import { reducer } from "./reducer/reducer";
 export const ProductContext = createContext();
 const initialState = {
   isLoading: true,
+  title: "",
+  img: "",
   prices: [],
   colors: [],
   sizes: [],
@@ -15,15 +17,25 @@ const initialState = {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
-    axios("Product.json").then((res) =>
+    axios(
+      "https://moveon-api-server.sbox.ali2bd.net/api/v1/customer/dummy-product"
+    ).then((res) => {
       dispatch({
-        isLoading: false,
-        prices: res.skus,
-        colors: res.props[0],
-        sizes: res.props[1],
-      })
-    );
+        type: "GET_DATA",
+        payload: {
+          isLoading: false,
+          title: res.data.title,
+          img: res.data.image,
+          prices: res.data.variation.skus,
+          colors: res.data.variation.props[0].values,
+          sizes: res.data.variation.props[1].values,
+        },
+      });
+    });
   }, []);
+  if (state.isLoading) {
+    return <p>Loading</p>;
+  }
   return (
     <ProductContext.Provider value={state}>
       <>
