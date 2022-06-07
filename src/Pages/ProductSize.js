@@ -8,7 +8,6 @@ const ProductSize = () => {
   const sizeNumber = (numb, id) => {
     setSizeCount(numb);
   };
-  console.log(sizes);
   return (
     <div className="mt-5 bg-slate-300 p-3">
       <h2 className="font-semibold">Size: {sizeCount}</h2>
