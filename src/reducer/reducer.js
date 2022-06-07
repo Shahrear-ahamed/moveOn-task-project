@@ -5,6 +5,7 @@ export const reducer = (state, action) => {
         isLoading: false,
         title: action.payload.title,
         img: action.payload.img,
+        price: action.payload.price.price,
         prices: action.payload.prices,
         colors: action.payload.colors,
         sizes: action.payload.sizes,

@@ -6,8 +6,8 @@ const Product = () => {
   const {img} = useContext(ProductContext);
 
   return (
-    <section className="container mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
+    <section className=" bg-slate-300">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 h-screen pt-10">
         <div>
           <img className="h-[80vh]" src={img} alt="" />
         </div>

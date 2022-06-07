@@ -9,7 +9,7 @@ const ProductSize = () => {
     setSizeCount(numb);
   };
   return (
-    <div className="mt-5 bg-slate-300 p-3">
+    <div className="mt-5 p-3">
       <h2 className="font-semibold">Size: {sizeCount}</h2>
       <div className="flex flex-warp mt-3 space-x-3">
         {sizes.map((size) => (

@@ -3,14 +3,14 @@ import { ProductContext } from "../App";
 
 const ProductColor = () => {
   const { colors } = useContext(ProductContext);
-  const defaultSize = colors[0]?.name;
-  const [colorName, setColorName] = useState(defaultSize);
+  const defaultColor = colors[0]?.name;
+  const [colorName, setColorName] = useState(defaultColor);
   const showColorName = (color, id) => {
     setColorName(color);
   };
 
   return (
-    <div className="mt-5 bg-slate-300 p-3">
+    <div className="mt-5 p-3">
       <h2 className="font-semibold">Color: {colorName}</h2>
       <div className="flex flex-wrap space-x-3 mt-2">
         {colors.map((color) => (
